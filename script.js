@@ -20,8 +20,8 @@ const init = function () {
   playing = true;
   scores = [0, 0];
 
-  score0El.textContent = 0;
-  score1El.textContent = 0;
+  score0El.textContent = 0+'/100';
+  score1El.textContent = 0+'/100';
   current0El.textContent = 0;
   current1El.textContent = 0;
 
@@ -64,7 +64,7 @@ btnHold.addEventListener('click', function () {
     //1. Add current score to activate player´s score
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
-      scores[activePlayer];
+      scores[activePlayer]+'/100';
     //2. Switch to the next player
     //Check if the score <= 100
     if (scores[activePlayer] < 100) {
